@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="106.38194444444446" y="414.0">control.Controller</node>
+    <node x="221.0" y="0.0">view.Window</node>
+    <node x="242.375" y="564.0">Main</node>
+    <node x="0.0" y="155.0">control.APIConnection</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="control.Controller" target="view.Window">
+      <point x="0.0" y="-50.0" />
+      <point x="224.38194444444446" y="389.0" />
+      <point x="247.5" y="389.0" />
+      <point x="-79.5" y="182.0" />
+    </edge>
+    <edge source="control.Controller" target="control.APIConnection">
+      <point x="-78.66666666666669" y="-50.0" />
+      <point x="145.71527777777777" y="389.0" />
+      <point x="100.5" y="389.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="Main" target="view.Window">
+      <point x="55.875" y="-27.0" />
+      <point x="372.75" y="539.0" />
+      <point x="376.74305555555554" y="539.0" />
+      <point x="376.74305555555554" y="389.0" />
+      <point x="406.5" y="389.0" />
+      <point x="79.5" y="182.0" />
+    </edge>
+    <edge source="Main" target="control.Controller">
+      <point x="-55.875" y="-27.0" />
+      <point x="261.0" y="539.0" />
+      <point x="165.38194444444446" y="539.0" />
+      <point x="-59.0" y="50.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="263.0" y="454.5" />
+  <SelectedNodes>
+    <node>control.Controller</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

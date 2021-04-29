@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.chartlyrics.com/">
+    <xs:element name="GetLyricResult">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TrackId" type="xs:unsignedByte" />
+                <xs:element name="LyricChecksum" type="xs:string" />
+                <xs:element name="LyricId" type="xs:unsignedShort" />
+                <xs:element name="LyricSong" type="xs:string" />
+                <xs:element name="LyricArtist" type="xs:string" />
+                <xs:element name="LyricUrl" type="xs:string" />
+                <xs:element name="LyricCovertArtUrl" type="xs:string" />
+                <xs:element name="LyricRank" type="xs:unsignedByte" />
+                <xs:element name="LyricCorrectUrl" type="xs:string" />
+                <xs:element name="Lyric" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xsd:schema>
