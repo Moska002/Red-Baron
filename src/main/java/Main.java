@@ -23,5 +23,5 @@ public class Main {
 		win.setMinimumSize(new Dimension(450, 300));
 		win.setVisible(true);
 	}
-
+	
 }

@@ -14,12 +14,15 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+
 import java.awt.Component;
 import java.awt.Dimension;
 
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +56,7 @@ public class Window extends JFrame {
 	public Window() {
 		setTitle("Red Baron");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 716, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,8 +79,9 @@ public class Window extends JFrame {
 		panel_1.add(textFieldSong);
 		textFieldSong.setColumns(10);
 		
-		btnSearch = new JButton("Cerca");
-		btnSearch.setIcon(null);
+		//bottone cerca
+		Icon icon = new ImageIcon("resources/iconSearch.png");
+		btnSearch = new JButton(icon);
 		panel_1.add(btnSearch);
 		
 		panel_2 = new JPanel();
@@ -113,7 +117,7 @@ public class Window extends JFrame {
 		verticalStrut = Box.createVerticalStrut(10);
 		verticalBox.add(verticalStrut);
 		
-		lblArtist = new JLabel("Artista");
+		lblArtist = new JLabel("Artista       ");
 		verticalBox.add(lblArtist);
 	}
 

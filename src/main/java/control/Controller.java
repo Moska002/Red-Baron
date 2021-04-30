@@ -54,6 +54,7 @@ public class Controller implements ActionListener {
 					BufferedImage c = ImageIO.read(url);
 					win.getImage().setImage(c);
 					
+					paragraph(obj.getLyric());
 					win.getTextPaneLyrics().setText(obj.getLyric());
 				} else {
 					win.getImage().setImage(notFoundImage);
@@ -69,5 +70,17 @@ public class Controller implements ActionListener {
 			}
 		}
 	}
-
+	public static String paragraph(String inputText) {
+		
+		String outputText = null;
+		
+		String[] splits = inputText.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+		
+		
+		for (int i = 0; i < splits.length; i++) {
+		    System.out.println(splits[i].trim());
+		}
+		
+		return outputText;
+	}
 }
