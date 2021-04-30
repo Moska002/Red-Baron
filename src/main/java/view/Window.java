@@ -12,6 +12,18 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+
+import javax.imageio.ImageIO;
+import javax.swing.Box;
+import java.awt.GridLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.swing.ImageIcon;
 
 public class Window extends JFrame {
 
@@ -23,14 +35,23 @@ public class Window extends JFrame {
 	private JPanel panel_2;
 	private JScrollPane scrollPane;
 	private JTextPane textPaneLyrics;
-	private JTextField textFieldAuthor;
-	private JTextField textFieldSong;
+	private PlaceholderTextField textFieldAuthor;
+	private PlaceholderTextField textFieldSong;
 	private JButton btnSearch;
+	private Box verticalBox_1;
+	private Box verticalBox;
+	private JLabel lblSong;
+	private JLabel lblArtist;
+	private Component verticalStrut;
+	private Component first;
+	private ImageView image;
+	private Component verticalStrut_1;
 
 	/**
 	 * Create the frame.
 	 */
 	public Window() {
+		setTitle("Red Baron");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,20 +66,23 @@ public class Window extends JFrame {
 		panel_1 = new JPanel();
 		panel.add(panel_1, BorderLayout.NORTH);
 		
-		textFieldAuthor = new JTextField();
+		textFieldAuthor = new PlaceholderTextField();
+		textFieldAuthor.setPlaceholder("Artista");
 		panel_1.add(textFieldAuthor);
 		textFieldAuthor.setColumns(10);
 		
-		textFieldSong = new JTextField();
+		textFieldSong = new PlaceholderTextField();
+		textFieldSong.setPlaceholder("Canzone");
 		panel_1.add(textFieldSong);
 		textFieldSong.setColumns(10);
 		
-		btnSearch = new JButton("New button");
+		btnSearch = new JButton("Cerca");
+		btnSearch.setIcon(null);
 		panel_1.add(btnSearch);
 		
 		panel_2 = new JPanel();
 		panel.add(panel_2, BorderLayout.CENTER);
-		panel_2.setLayout(new BorderLayout(0, 0));
+		panel_2.setLayout(new BorderLayout(5, 0));
 		
 		scrollPane = new JScrollPane();
 		panel_2.add(scrollPane, BorderLayout.CENTER);
@@ -67,22 +91,58 @@ public class Window extends JFrame {
 		textPaneLyrics.setEditable(false);
 		scrollPane.setViewportView(textPaneLyrics);
 		
+		verticalBox_1 = Box.createVerticalBox();
+		panel_2.add(verticalBox_1, BorderLayout.WEST);
+		
+		first = Box.createVerticalStrut(10);
+		verticalBox_1.add(first);
+		
+		image = new ImageView(new Dimension(150, 150));
+		verticalBox_1.add(image);
+		
+		verticalStrut_1 = Box.createVerticalStrut(10);
+		verticalBox_1.add(verticalStrut_1);
+		
+		verticalBox = Box.createVerticalBox();
+		verticalBox.setAlignmentX(Component.CENTER_ALIGNMENT);
+		verticalBox_1.add(verticalBox);
+		
+		lblSong = new JLabel("Canzone");
+		verticalBox.add(lblSong);
+		
+		verticalStrut = Box.createVerticalStrut(10);
+		verticalBox.add(verticalStrut);
+		
+		lblArtist = new JLabel("Artista");
+		verticalBox.add(lblArtist);
+	}
+
+	public JButton getBtnSearch() {
+		return btnSearch;
 	}
 
 	public JTextPane getTextPaneLyrics() {
 		return textPaneLyrics;
 	}
 
-	public JTextField getTextFieldAuthor() {
+	public PlaceholderTextField getTextFieldAuthor() {
 		return textFieldAuthor;
 	}
 
-	public JTextField getTextFieldSong() {
+	public PlaceholderTextField getTextFieldSong() {
 		return textFieldSong;
 	}
 
-	public JButton getBtnSearch() {
-		return btnSearch;
+	public JLabel getLblArtist() {
+		return lblArtist;
+	}
+
+	public JLabel getLblSong() {
+		return lblSong;
+	}
+
+	public ImageView getImage() {
+		return image;
 	}
 
 }
