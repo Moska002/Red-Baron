@@ -8,6 +8,8 @@ import java.awt.geom.AffineTransform;
 
 import javax.swing.JPanel;
 
+import static java.awt.Color.RED;
+
 /**
  * 
  * Classe che gestisce i frame in maniera dinamica
@@ -89,9 +91,14 @@ public class ImageView extends JPanel {
 			at.translate(x, y);
 			at.scale(scaleFactor, scaleFactor);
 			g2d.setTransform(at);
+
+			g2d.setColor(RED);
+			g2d.fillRect(0, 0, WIDTH, HEIGHT);
+
 			g2d.drawImage(img, 0, 0, this);
 			g2d.dispose();
 		} else {
+			g2d.setColor(RED);
 			g2d.fillRect(0, 0, WIDTH, HEIGHT);
 		}
 	}

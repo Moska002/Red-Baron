@@ -9,6 +9,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
@@ -23,12 +25,14 @@ public class Controller implements ActionListener {
 		
 		try {
 			notFoundImage = ImageIO.read(new File("assets/notFound.png"));
+			win.getImage().setImage(notFoundImage);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		win.getBtnSearch().addActionListener(this);
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		GetLyricResult obj;
 		
@@ -49,13 +53,16 @@ public class Controller implements ActionListener {
 					
 					win.getLblArtist().setText(obj.getLyricArtist());
 					win.getLblSong().setText(obj.getLyricSong());
-					
-					URL url = new URL(obj.getLyricCovertArtUrl());
-					BufferedImage c = ImageIO.read(url);
-					win.getImage().setImage(c);
-					
-					paragraph(obj.getLyric());
-					win.getTextPaneLyrics().setText(obj.getLyric());
+
+					try {
+						URL url = new URL(obj.getLyricCovertArtUrl());
+						BufferedImage c = ImageIO.read(url);
+						win.getImage().setImage(c);
+					} catch(Exception err){
+						win.getImage().setImage(notFoundImage);
+					}
+
+					win.getTextPaneLyrics().setText(paragraph(obj.getLyric()));
 				} else {
 					win.getImage().setImage(notFoundImage);
 					
@@ -71,16 +78,12 @@ public class Controller implements ActionListener {
 		}
 	}
 	public static String paragraph(String inputText) {
-		
-		String outputText = null;
-		
-		String[] splits = inputText.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-		
-		
-		for (int i = 0; i < splits.length; i++) {
-		    System.out.println(splits[i].trim());
-		}
-		
-		return outputText;
+		System.out.println(inputText);
+
+		String[] splits = inputText.split("(?<=[a-zÀ-ÖØ-öø-ÿ]|,|\\]|\\)|\\?|\\!|(?<![A-Z])\\.)(?=[A-Z0-9]|\\[|\\(|(?=\\'[A-Z]))");
+		//,(?=([^"]*"[^"]*")*[^"]*$)
+		//((?<=[a-z]|,)([A-Z]|\[)|jsoc)
+
+		return String.join("\n", splits);
 	}
 }

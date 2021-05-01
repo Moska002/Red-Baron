@@ -20,7 +20,7 @@ public class Main {
 		
 		Controller contr = new Controller(win);
 		
-		win.setMinimumSize(new Dimension(450, 300));
+		win.setResizable(false);
 		win.setVisible(true);
 	}
 	
