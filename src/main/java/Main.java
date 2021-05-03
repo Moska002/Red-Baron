@@ -1,4 +1,3 @@
-import java.awt.Dimension;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -8,6 +7,12 @@ import com.formdev.flatlaf.FlatLightLaf;
 import control.Controller;
 import view.Window;
 
+/**
+ * Classe di avvio del programma
+ *
+ * @author Moscatelli Alessandro
+ * @author Silvello Lorenzo
+ */
 public class Main {
 
 	public static void main(String[] args) {

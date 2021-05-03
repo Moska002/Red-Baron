@@ -3,47 +3,101 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="106.38194444444446" y="414.0">control.Controller</node>
-    <node x="221.0" y="0.0">view.Window</node>
-    <node x="242.375" y="564.0">Main</node>
-    <node x="0.0" y="155.0">control.APIConnection</node>
+    <node x="0.0" y="231.0">view.PlaceholderTextField</node>
+    <node x="682.6488095238095" y="0.0">model.GetLyricResult</node>
+    <node x="235.65476190476193" y="1372.0">control.Controller</node>
+    <node x="652.0654761904761" y="1009.5">model.ObjectFactory</node>
+    <node x="342.6488095238095" y="242.0">view.ImageView</node>
+    <node x="50.291666666666686" y="778.0">view.Window</node>
+    <node x="214.90476190476193" y="1570.0">Main</node>
+    <node x="372.9404761904762" y="998.5">control.APIConnection</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="control.Controller" target="view.Window">
-      <point x="0.0" y="-50.0" />
-      <point x="224.38194444444446" y="389.0" />
-      <point x="247.5" y="389.0" />
-      <point x="-79.5" y="182.0" />
+    <edge source="control.Controller" target="view.Window" relationship="TO_ONE">
+      <point x="-29.5" y="-73.0" />
+      <point x="324.1547619047619" y="1341.0" />
+      <point x="252.79166666666669" y="1341.0" />
+      <point x="67.5" y="271.0" />
     </edge>
-    <edge source="control.Controller" target="control.APIConnection">
-      <point x="-78.66666666666669" y="-50.0" />
-      <point x="145.71527777777777" y="389.0" />
-      <point x="100.5" y="389.0" />
-      <point x="0.0" y="27.0" />
+    <edge source="control.Controller" target="model.GetLyricResult" relationship="DEPENDENCY">
+      <point x="88.5" y="-73.0" />
+      <point x="442.1547619047619" y="1351.0" />
+      <point x="904.5654761904761" y="1351.0" />
+      <point x="904.5654761904761" y="758.0" />
+      <point x="792.6488095238095" y="758.0" />
+      <point x="0.0" y="359.0" />
     </edge>
-    <edge source="Main" target="view.Window">
-      <point x="55.875" y="-27.0" />
-      <point x="372.75" y="539.0" />
-      <point x="376.74305555555554" y="539.0" />
-      <point x="376.74305555555554" y="389.0" />
-      <point x="406.5" y="389.0" />
-      <point x="79.5" y="182.0" />
+    <edge source="view.Window" target="view.ImageView" relationship="CREATE">
+      <point x="101.25" y="-271.0" />
+      <point x="286.5416666666667" y="748.0" />
+      <point x="582.6488095238096" y="748.0" />
+      <point x="80.0" y="117.0" />
     </edge>
-    <edge source="Main" target="control.Controller">
-      <point x="-55.875" y="-27.0" />
-      <point x="261.0" y="539.0" />
-      <point x="165.38194444444446" y="539.0" />
-      <point x="-59.0" y="50.0" />
+    <edge source="control.Controller" target="control.APIConnection" relationship="DEPENDENCY">
+      <point x="29.5" y="-73.0" />
+      <point x="383.1547619047619" y="1341.0" />
+      <point x="489.9404761904762" y="1341.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="control.Controller" target="view.Window" relationship="DEPENDENCY">
+      <point x="-88.5" y="-73.0" />
+      <point x="265.1547619047619" y="1351.0" />
+      <point x="196.90476190476193" y="1351.0" />
+      <point x="196.90476190476193" y="1341.0" />
+      <point x="117.79166666666669" y="1341.0" />
+      <point x="-67.5" y="271.0" />
+    </edge>
+    <edge source="Main" target="control.Controller" relationship="CREATE">
+      <point x="37.25" y="-39.5" />
+      <point x="326.6547619047619" y="1544.0" />
+      <point x="353.6547619047619" y="1544.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="view.Window" target="view.PlaceholderTextField" relationship="CREATE">
+      <point x="-33.75" y="-271.0" />
+      <point x="151.54166666666669" y="758.0" />
+      <point x="211.5" y="758.0" />
+      <point x="70.5" y="128.0" />
+    </edge>
+    <edge source="view.Window" target="view.PlaceholderTextField" relationship="TO_ONE">
+      <point x="-101.25" y="-271.0" />
+      <point x="84.04166666666669" y="758.0" />
+      <point x="70.5" y="758.0" />
+      <point x="-70.5" y="128.0" />
+    </edge>
+    <edge source="model.ObjectFactory" target="model.GetLyricResult" relationship="CREATE">
+      <point x="0.0" y="-39.5" />
+      <point x="773.0654761904761" y="758.0" />
+      <point x="792.6488095238095" y="758.0" />
+      <point x="0.0" y="359.0" />
+    </edge>
+    <edge source="control.APIConnection" target="model.GetLyricResult" relationship="DEPENDENCY">
+      <point x="0.0" y="-50.5" />
+      <point x="489.9404761904762" y="758.0" />
+      <point x="792.6488095238095" y="758.0" />
+      <point x="0.0" y="359.0" />
+    </edge>
+    <edge source="view.Window" target="view.ImageView" relationship="TO_ONE">
+      <point x="33.75" y="-271.0" />
+      <point x="219.04166666666669" y="738.0" />
+      <point x="422.6488095238095" y="738.0" />
+      <point x="-80.0" y="117.0" />
+    </edge>
+    <edge source="Main" target="view.Window" relationship="CREATE">
+      <point x="-37.25" y="-39.5" />
+      <point x="252.15476190476193" y="1544.0" />
+      <point x="196.90476190476193" y="1544.0" />
+      <point x="196.90476190476193" y="1341.0" />
+      <point x="117.79166666666669" y="1341.0" />
+      <point x="-67.5" y="271.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="263.0" y="454.5" />
-  <SelectedNodes>
-    <node>control.Controller</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic" zoom="0.4000000000000001" showDependencies="true" x="839.6743697478987" y="440.9999999999999" />
+  <SelectedNodes />
   <Categories>
-    <Category>Fields</Category>
     <Category>Constructors</Category>
+    <Category>Fields</Category>
     <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>

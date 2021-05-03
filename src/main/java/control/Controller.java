@@ -9,26 +9,36 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Classe adibita alla gestione degli eventi.
+ *
+ * @author Moscatelli Alessandro
+ * @author Silvello Lorenzo
+ */
 public class Controller implements ActionListener {
 
 	private Window win;
 	private BufferedImage notFoundImage;
 
+	/**
+	 * Metodo costruttore della classe
+	 *
+	 * @param win Finestra grafica
+	 */
 	public Controller(Window win) {
 		super();
 		this.win = win;
-		
+
 		try {
 			notFoundImage = ImageIO.read(new File("assets/notFound.png"));
-			win.getImage().setImage(notFoundImage);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		win.getImage().setImage(notFoundImage);
 		win.getBtnSearch().addActionListener(this);
 	}
 
@@ -71,16 +81,23 @@ public class Controller implements ActionListener {
 					
 					win.getTextPaneLyrics().setText("NOT FOUND");
 				}
-				
+
 			} catch(Exception err) {
 				err.printStackTrace();
 			}
 		}
 	}
-	public static String paragraph(String inputText) {
+
+	/**
+	 * Metodo con il compito di formattare un testo inserendo dei ritorni a capo
+	 *
+	 * @param inputText Testo
+	 * @return Testo formattato
+	 */
+	public String paragraph(String inputText) {
 		System.out.println(inputText);
 
-		String[] splits = inputText.split("(?<=[a-zÀ-ÖØ-öø-ÿ]|,|\\]|\\)|\\?|\\!|(?<![A-Z])\\.)(?=[A-Z0-9]|\\[|\\(|(?=\\'[A-Z]))");
+		String[] splits = inputText.split("(?<=\\p{Ll}|,|\\]|\\)|\\?|\\!|(?<!\\p{Lu})\\.)(?=[\\p{Lu}0-9]|\\[|\\(|(?=\\'\\p{Lu}))");
 		//,(?=([^"]*"[^"]*")*[^"]*$)
 		//((?<=[a-z]|,)([A-Z]|\[)|jsoc)
 

@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
+import javax.swing.Box;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,6 +14,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
+/**
+ *
+ */
 public class Window extends JFrame {
 
 	private static final long serialVersionUID = -3511543085625008909L;
@@ -28,9 +32,9 @@ public class Window extends JFrame {
 	private JButton btnSearch;
 	private JPanel panel_3;
 	private ImageView image;
-	private JPanel panel_4;
-	private JLabel lblArtist;
+	private Box verticalBox;
 	private JLabel lblSong;
+	private JLabel lblArtist;
 
 	/**
 	 * Create the frame.
@@ -85,14 +89,14 @@ public class Window extends JFrame {
 		image.setLayout(null);
 		panel_3.add(image, BorderLayout.NORTH);
 
-		panel_4 = new JPanel();
-		panel_3.add(panel_4, BorderLayout.SOUTH);
+		verticalBox = Box.createVerticalBox();
+		panel_3.add(verticalBox, BorderLayout.SOUTH);
 
 		lblSong = new JLabel("Canzone");
-		panel_4.add(lblSong);
+		verticalBox.add(lblSong);
 
 		lblArtist = new JLabel("Artista");
-		panel_4.add(lblArtist);
+		verticalBox.add(lblArtist);
 	}
 
 	public JButton getBtnSearch() {
