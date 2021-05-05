@@ -20,23 +20,50 @@ public class PlaceholderTextField extends JTextField {
 	private static final long serialVersionUID = 3604111637077723730L;
 	private String placeholder;
 
+    /**
+     * Metodo costruttore della classe
+     */
     public PlaceholderTextField() {}
 
+    /**
+     * Metodo costruttore della classe
+     *
+     * @param pDoc Metodo di immagazinamento testo
+     * @param pText Stringa iniziale
+     * @param pColumns Numero di colonne
+     */
     public PlaceholderTextField(final Document pDoc, final String pText, final int pColumns){
         super(pDoc, pText, pColumns);
     }
 
+    /**
+     * Metodo costruttore della classe
+     *
+     * @param pColumns Numero di colonne
+     */
     public PlaceholderTextField(final int pColumns) {
         super(pColumns);
     }
 
+    /**
+     * Metodo costruttore della classe
+     *
+     * @param pText Stringa iniziale
+     */
     public PlaceholderTextField(final String pText) {
         super(pText);
     }
 
+    /**
+     * Metodo costruttore della classe
+     *
+     * @param pText Stringa iniziale
+     * @param pColumns Numero di colonne
+     */
     public PlaceholderTextField(final String pText, final int pColumns) {
         super(pText, pColumns);
     }
+
     /**
      * Metodo che torna un placeholder
      * 
@@ -45,6 +72,7 @@ public class PlaceholderTextField extends JTextField {
     public String getPlaceholder() {
         return placeholder;
     }
+
     /**
      * Metodo che imposta le caratteristiche del placeholder
      * 
@@ -63,6 +91,7 @@ public class PlaceholderTextField extends JTextField {
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics()
             .getMaxAscent() + getInsets().top);
     }
+
     /**
      * Metodo che imposta il testo del placeholder
      * 

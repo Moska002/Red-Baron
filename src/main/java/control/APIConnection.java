@@ -12,6 +12,7 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Classe che implementa la connessione alla API e la conversione in oggetto
@@ -27,20 +28,20 @@ public class APIConnection {
 	 * @param author Nome autore 
 	 * @param song	Nome canzone
 	 * @return Testo canzone
-	 * @throws IOException
+	 * @throws IOException Errore di I/O
 	 */
 	public static String getLyric(String author, String song) throws IOException {
-		String str = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=" + URLEncoder.encode(author, "UTF-8") + "&song=" + URLEncoder.encode(song, "UTF-8");
+		String str = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=" + URLEncoder.encode(author, StandardCharsets.UTF_8) + "&song=" + URLEncoder.encode(song, StandardCharsets.UTF_8);
 		str = str.replace("+", "%20");
 
 		URL url = new URL(str);
 		HttpURLConnection conn = (HttpURLConnection) (url).openConnection();
 		conn.connect();
 		
-		StringBuilder sb = new StringBuilder("");
+		StringBuilder sb = new StringBuilder();
 		String line;
 		if(conn.getResponseCode() == 200) {
-			BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
 
 			while((line = input.readLine()) != null) {
 				sb.append(line);
@@ -49,12 +50,13 @@ public class APIConnection {
 		
 		return sb.toString();
 	}
+
 	/**
 	 * Metodo che converte il file xml in un oggetto 
 	 * 
 	 * @param xml File xml 
 	 * @return Oggetto  
-	 * @throws JAXBException Eccezzione
+	 * @throws JAXBException Eccezione
 	 */
 	public static GetLyricResult xlmToObject(String xml) throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(GetLyricResult.class);
