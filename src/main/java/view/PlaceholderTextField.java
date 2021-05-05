@@ -7,6 +7,14 @@ import java.awt.RenderingHints;
 import javax.swing.JTextField;
 import javax.swing.text.Document;
 
+/**
+ * 
+ * @author Moscatelli
+ * @author Silvello 
+ * 
+ * Classe che implementa un componenete grafico placeholder
+ *
+ */
 public class PlaceholderTextField extends JTextField {
 
 	private static final long serialVersionUID = 3604111637077723730L;
@@ -29,11 +37,18 @@ public class PlaceholderTextField extends JTextField {
     public PlaceholderTextField(final String pText, final int pColumns) {
         super(pText, pColumns);
     }
-
+    /**
+     * Metodo che torna un placeholder
+     * 
+     * @return Oggetto placeholder
+     */
     public String getPlaceholder() {
         return placeholder;
     }
-
+    /**
+     * Metodo che imposta le caratteristiche del placeholder
+     * 
+     */
     @Override
     protected void paintComponent(Graphics pG) {
         super.paintComponent(pG);
@@ -48,7 +63,11 @@ public class PlaceholderTextField extends JTextField {
         g.drawString(placeholder, getInsets().left, pG.getFontMetrics()
             .getMaxAscent() + getInsets().top);
     }
-
+    /**
+     * Metodo che imposta il testo del placeholder
+     * 
+     * @param s Stringa da impostare 
+     */
     public void setPlaceholder(final String s) {
         placeholder = s;
     }

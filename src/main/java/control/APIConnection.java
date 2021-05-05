@@ -13,8 +13,22 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+/**
+ * Classe che implementa la connessione alla API e la conversione in oggetto
+ * 
+ * @author Moscatelli
+ *
+ */
 public class APIConnection {
 
+	/**
+	 * Metodo che ritorna il testo della canzone ricercata 
+	 * 
+	 * @param author Nome autore 
+	 * @param song	Nome canzone
+	 * @return Testo canzone
+	 * @throws IOException
+	 */
 	public static String getLyric(String author, String song) throws IOException {
 		String str = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=" + URLEncoder.encode(author, "UTF-8") + "&song=" + URLEncoder.encode(song, "UTF-8");
 		str = str.replace("+", "%20");
@@ -35,7 +49,13 @@ public class APIConnection {
 		
 		return sb.toString();
 	}
-
+	/**
+	 * Metodo che converte il file xml in un oggetto 
+	 * 
+	 * @param xml File xml 
+	 * @return Oggetto  
+	 * @throws JAXBException Eccezzione
+	 */
 	public static GetLyricResult xlmToObject(String xml) throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(GetLyricResult.class);
 		Unmarshaller unmarshaller = context.createUnmarshaller();
