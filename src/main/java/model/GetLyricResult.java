@@ -22,24 +22,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="TrackId" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
- *         &lt;element name="LyricChecksum" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LyricId" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/>
- *         &lt;element name="LyricSong" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LyricArtist" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LyricUrl" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LyricCovertArtUrl" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LyricRank" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
- *         &lt;element name="LyricCorrectUrl" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Lyric" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="TrackId" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
+ *         &lt;element name="LyricChecksum" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LyricId" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/&gt;
+ *         &lt;element name="LyricSong" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LyricArtist" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LyricUrl" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LyricCovertArtUrl" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LyricRank" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/&gt;
+ *         &lt;element name="LyricCorrectUrl" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Lyric" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -86,7 +86,8 @@ public class GetLyricResult {
 
     /**
      * Recupera il valore della proprietà trackId.
-     * 
+     *
+     * @return trackId
      */
     public short getTrackId() {
         return trackId;
@@ -94,7 +95,8 @@ public class GetLyricResult {
 
     /**
      * Imposta il valore della proprietà trackId.
-     * 
+     *
+     * @param value trackId
      */
     public void setTrackId(short value) {
         this.trackId = value;
@@ -126,7 +128,8 @@ public class GetLyricResult {
 
     /**
      * Recupera il valore della proprietà lyricId.
-     * 
+     *
+     * @return trackId
      */
     public int getLyricId() {
         return lyricId;
@@ -134,7 +137,8 @@ public class GetLyricResult {
 
     /**
      * Imposta il valore della proprietà lyricId.
-     * 
+     *
+     * @param value trackId
      */
     public void setLyricId(int value) {
         this.lyricId = value;
@@ -238,7 +242,8 @@ public class GetLyricResult {
 
     /**
      * Recupera il valore della proprietà lyricRank.
-     * 
+     *
+     * @return lyricRank
      */
     public short getLyricRank() {
         return lyricRank;
@@ -246,7 +251,8 @@ public class GetLyricResult {
 
     /**
      * Imposta il valore della proprietà lyricRank.
-     * 
+     *
+     * @param value lyricRank
      */
     public void setLyricRank(short value) {
         this.lyricRank = value;

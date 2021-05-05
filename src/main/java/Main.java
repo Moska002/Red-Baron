@@ -15,6 +15,11 @@ import view.Window;
  */
 public class Main {
 
+	/**
+	 * Metodo di avvio
+	 *
+	 * @param args Parametri
+	 */
 	public static void main(String[] args) {
 		Window win = new Window();
 		try {

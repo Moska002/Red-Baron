@@ -38,7 +38,8 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetLyricResult }
-     * 
+     *
+     * @return An instance of {@link GetLyricResult }
      */
     public GetLyricResult createGetLyricResult() {
         return new GetLyricResult();

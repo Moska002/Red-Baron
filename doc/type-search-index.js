@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"control","l":"APIConnection"},{"p":"control","l":"Controller"},{"p":"model","l":"GetLyricResult"},{"p":"view","l":"ImageView"},{"p":"<Unnamed>","l":"Main"},{"p":"model","l":"ObjectFactory"},{"p":"view","l":"PlaceholderTextField"},{"p":"view","l":"Window"}]
